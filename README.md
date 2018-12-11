@@ -1,6 +1,6 @@
 # Tower of Hanoi
 
-[Description on Wikipedia](https://and.wikipedia.org/wiki/Tower_of_Hanoi)
+[Description on Wikipedia](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
 
 This is an example .NET solution that defines an object oriented model in a .NET Standard class library.
 The model is accompanied with unit tests created with xUnit.

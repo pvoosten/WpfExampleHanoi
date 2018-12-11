@@ -1,16 +1,16 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HanoiVisualisatie.ViewModels
+namespace HanoiWpfApp.ViewModels
 {
-    public class Tower_ViewModel : INotifyPropertyChanged
+    public class Tower_ViewModel : ViewModelBase
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
+        public ObservableCollection<Disc_ViewModel> Discs { get; set; }
     }
 }

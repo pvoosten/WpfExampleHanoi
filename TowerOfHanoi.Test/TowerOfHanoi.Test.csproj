@@ -4,6 +4,16 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <Authors>Philip van Oosten</Authors>
+
+    <PackageLicenseUrl>https://github.com/pvoosten/WpfExampleHanoi/blob/master/LICENSE</PackageLicenseUrl>
+
+    <PackageProjectUrl>https://github.com/pvoosten/WpfExampleHanoi</PackageProjectUrl>
+
+    <Copyright>Philip van Oosten 2018</Copyright>
+
+    <RepositoryUrl>https://github.com/pvoosten/WpfExampleHanoi</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

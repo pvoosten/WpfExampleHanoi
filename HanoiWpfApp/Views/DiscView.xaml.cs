@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace HanoiWpfApp.Views
 {
     /// <summary>
-    /// Interaction logic for TowerView.xaml
+    /// Interaction logic for DiscView.xaml
     /// </summary>
-    public partial class TowerView : UserControl
+    public partial class DiscView : UserControl
     {
-        public TowerView()
+        public DiscView()
         {
             InitializeComponent();
         }

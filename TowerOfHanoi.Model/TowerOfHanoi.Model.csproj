@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Authors>Philip van Oosten</Authors>
+    <Copyright>Philip van Oosten 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/pvoosten/WpfExampleHanoi/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/pvoosten/WpfExampleHanoi</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/pvoosten/WpfExampleHanoi</RepositoryUrl>
   </PropertyGroup>
 
 </Project>

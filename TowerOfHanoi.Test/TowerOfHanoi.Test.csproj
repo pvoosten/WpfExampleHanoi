@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TorensVanHanoi.Model\TowerOfHanoi.Model.csproj" />
+    <ProjectReference Include="..\TowerOfHanoi.Model\TowerOfHanoi.Model.csproj" />
   </ItemGroup>
 
 </Project>

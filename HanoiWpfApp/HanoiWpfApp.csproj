@@ -102,6 +102,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TowerOfHanoi.Model\TowerOfHanoi.Model.csproj">
+      <Project>{7d0855ae-3179-431a-bdea-f6833e0c2101}</Project>
+      <Name>TowerOfHanoi.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

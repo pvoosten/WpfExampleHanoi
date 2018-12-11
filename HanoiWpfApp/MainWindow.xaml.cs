@@ -11,16 +11,5 @@ namespace HanoiWpfApp
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Op knop geklikt");
-            
-        }
-
-        private void button_Click_1(object sender, RoutedEventArgs e)
-        {
-            checkBox.IsChecked=true;
-        }
     }
 }

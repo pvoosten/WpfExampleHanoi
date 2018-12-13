@@ -6,16 +6,39 @@
              xmlns:local="clr-namespace:HanoiWpfApp.Views"
              xmlns:vm="clr-namespace:HanoiWpfApp.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             d:DataContext="{d:DesignInstance Type=vm:Tower_ViewModel,IsDesignTimeCreatable=True}">
-        <ItemsControl ItemsSource="{Binding Discs}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Rectangle Width="{Binding Diameter}" Height="1" HorizontalAlignment="Center" />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            <ItemsPanelTemplate>
-                <StackPanel/>
-            </ItemsPanelTemplate>
-        </ItemsControl>
+             d:DataContext="{d:DesignInstance Type=vm:Tower_ViewModel,IsDesignTimeCreatable=True}" d:DesignWidth="574.875" d:DesignHeight="354.088">
+    <UserControl.Resources>
+        <Style TargetType="Border">
+            <Setter Property="BorderBrush" Value="DarkGray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid IsItemsHost="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0">
+            <Button Content="Take" Command="{Binding TakeDiscCommand}"/>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1">
+            <Button Content="Lay down" Command="{Binding LayDownDiscCommand}"/>
+        </Border>
+        <Border Grid.Row="1" Grid.ColumnSpan="2">
+            <ListBox ItemsSource="{Binding Discs}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Diameter}" HorizontalAlignment="Center" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+    </Grid>
 </UserControl>

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="HanoiWpfApp.Views.GameControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             HorizontalAlignment="Center"
+             xmlns:local="clr-namespace:HanoiWpfApp.Views"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Horizontal">
+        <GroupBox Header="Game mode">
+            <GroupBox.Resources>
+                <Style TargetType="RadioButton">
+                    <Setter Property="GroupName" Value="gameMode"/>
+                </Style>
+            </GroupBox.Resources>
+            <StackPanel>
+                <RadioButton Content="Click to take and drop discs" IsChecked="{Binding IsPlayManuallyChecked}"></RadioButton>
+                <RadioButton Content="Click to play the next correct move" IsChecked="{Binding IsPlayClickThroughChecked}"/>
+            </StackPanel>
+        </GroupBox>
+        <TextBlock VerticalAlignment="Center" Margin="20 0 0 0">Number of discs</TextBlock>
+        <TextBox Text="{Binding NumberOfDiscs}" VerticalAlignment="Center" MinWidth="50" Margin="10 0 0 0"/>
+        <Button Content="Start new game" VerticalAlignment="Center" Command="{Binding StartNewGameCommand}" Margin="30 0 0 0"/>
+    </StackPanel>
+</UserControl>

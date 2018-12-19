@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:HanoiWpfApp.ViewModels"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="HanoiWpfApp.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="520" Width="830">
+        Title="Tower of Hanoi WPF demo, https://github.com/pvoosten" Height="520" Width="830">
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
@@ -32,7 +32,7 @@
             <local:GameControl />
         </Border>
         <Border Grid.Row="1" Grid.Column="0">
-            <local:TowerView DataContext="{Binding FirstTower}"/>
+            <local:TowerView DataContext="{Binding FirstTower}" />
         </Border>
         <Border Grid.Row="1" Grid.Column="1">
             <local:TowerView DataContext="{Binding SecondTower}"/>

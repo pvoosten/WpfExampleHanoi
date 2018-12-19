@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace TowerOfHanoi.Model
 {
     public class Tower
     {
-        private Stack<Disc> _Discs;
+        private Stack<Disc> _discs;
 
         public Tower() : this(0)
         {
@@ -15,7 +16,7 @@ namespace TowerOfHanoi.Model
 
         internal Tower(int discCount)
         {
-            _Discs = new Stack<Disc>(discCount);
+            _discs = new Stack<Disc>(discCount);
             for (int i = 0; i < discCount; i++)
             {
                 LayDiscOnTop(new Disc(discCount - i));
@@ -26,19 +27,28 @@ namespace TowerOfHanoi.Model
         {
             if ((TopLevelDisc?.Diameter ?? int.MaxValue) <= Disc.Diameter)
                 throw new DiscTooGreatException();
-            _Discs.Push(Disc);
+            _discs.Push(Disc);
         }
 
         public Disc TopLevelDisc
         {
             get
             {
-                if (_Discs.Count == 0)
+                if (_discs.Count == 0)
                 {
                     return null;
                 }
-                return _Discs.Peek();
+                return _discs.Peek();
             }
+        }
+
+        /// <summary>
+        /// Gets all the discs in the tower, from bottom to top.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Disc> DiscsFromBottomToTop()
+        {
+            return _discs.AsEnumerable();
         }
 
         public Disc TakeDisc()
@@ -48,7 +58,7 @@ namespace TowerOfHanoi.Model
                 throw new TowerEmptyException();
             }
             var Disc = TopLevelDisc;
-            _Discs.Pop();
+            _discs.Pop();
             return Disc;
         }
     }

@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:HanoiWpfApp.Views"
              xmlns:vm="clr-namespace:HanoiWpfApp.ViewModels"
              mc:Ignorable="d" 
-             d:DataContext="{d:DesignInstance Type=vm:Tower_ViewModel,IsDesignTimeCreatable=True}" d:DesignWidth="574.875" d:DesignHeight="354.088">
+             d:DataContext="{d:DesignInstance Type=vm:Tower_ViewModel,IsDesignTimeCreatable=True}" d:DesignWidth="574.875" d:DesignHeight="354.088"
+             x:Name="tower">
     <UserControl.Resources>
         <Style TargetType="Border">
             <Setter Property="BorderBrush" Value="DarkGray"/>
@@ -15,6 +16,7 @@
             <Setter Property="Margin" Value="4"/>
             <Setter Property="CornerRadius" Value="10"/>
         </Style>
+        <BooleanToVisibilityConverter x:Key="booleanToVisibility" />
     </UserControl.Resources>
     <Grid IsItemsHost="False">
         <Grid.RowDefinitions>
@@ -25,20 +27,23 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Row="0" Grid.Column="0">
+        <Border Grid.Row="0" Grid.Column="0" Visibility="{Binding IsPlayedManually, Converter={StaticResource booleanToVisibility}}">
             <Button Content="Take" Command="{Binding TakeDiscCommand}"/>
         </Border>
-        <Border Grid.Row="0" Grid.Column="1">
+        <Border Grid.Row="0" Grid.Column="1" Visibility="{Binding IsPlayedManually, Converter={StaticResource booleanToVisibility}}">
             <Button Content="Lay down" Command="{Binding LayDownDiscCommand}"/>
         </Border>
         <Border Grid.Row="1" Grid.ColumnSpan="2">
-            <ListBox ItemsSource="{Binding Discs}">
+                <ListBox ItemsSource="{Binding Discs}" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" BorderBrush="Transparent" Background="Transparent">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Diameter}" HorizontalAlignment="Center" />
+                        <Grid>
+                            <local:DiscView DataContext="{Binding}" Opacity="0.5" />
+                            <TextBlock Text="{Binding Diameter}" HorizontalAlignment="Center" FontSize="10" />
+                        </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </Border>
+            </Border>
     </Grid>
 </UserControl>

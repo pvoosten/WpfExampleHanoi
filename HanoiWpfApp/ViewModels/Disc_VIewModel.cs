@@ -1,33 +1,28 @@
 ﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TowerOfHanoi.Model;
 
 namespace HanoiWpfApp.ViewModels
 {
     public class Disc_ViewModel : ViewModelBase
     {
+
         public Disc_ViewModel()
         {
             if (IsInDesignMode)
             {
-                Diameter = 20;
+                Disc = new Disc(5);
             }
         }
 
-        private int _diameter;        
-        public int Diameter
+        public Disc_ViewModel(Disc disc)
         {
-            get => _diameter;
-            set
-            {
-                if (_diameter == value) return;
-                _diameter = value;
-                RaisePropertyChanged(nameof(Diameter));
-            }
+            Disc = disc;
         }
+
+        public Disc Disc { get; }
+
+        public int Diameter => Disc.Diameter;
+
+        public int DiameterToDraw => Disc.Diameter * 10;
     }
 }
